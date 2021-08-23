@@ -1,25 +1,27 @@
 package com.albumassignment2.Model;
 
+import org.springframework.data.annotation.Id;
+
 public class Album {
 
-    private int AlbumId;
+    @Id
+    private String id;
     private String name;
     private String description;
     private String coverPicUrl;
 
-    public Album(int albumId, String name, String description, String coverPicUrl) {
-        AlbumId = albumId;
+    public Album(String name, String description, String coverPicUrl) {
         this.name = name;
         this.description = description;
         this.coverPicUrl = coverPicUrl;
     }
 
-    public int getAlbumId() {
-        return AlbumId;
+    public String getId() {
+        return id;
     }
 
-    public void setAlbumId(int albumId) {
-        AlbumId = albumId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -13,27 +13,23 @@ public class AlbumService {
     @Autowired
     private AlbumRepository albumRepository;
 
-    public Album getAlbum(){
-        return albumRepository.getAlbum();
+    public Album saveAlbum(Album album) {
+        return albumRepository.save(album);
+    }
+
+    public void getAlbumbyId(String albumId) {
+        albumRepository.findById(albumId);
     }
 
     public List<Album> getAllAlbum() {
-        return albumRepository.getAllAlbum();
+        return albumRepository.findAll();
     }
 
-    public Album saveAlbum(Album album) {
-        return albumRepository.saveAlbum(album);
+    public Album updateAlbum(Album album) {
+        return albumRepository.save(album);
     }
 
-        public Album getAlbumbyId(int albumId) {
-        return albumRepository.getAlbumbyId(albumId);
-    }
-
-    public Album updateAlbum(int albumId, Album album) {
-        return albumRepository.updateAlbum(albumId, album);
-    }
-
-    public Album deleteAlbum(int albumId) {
-        return albumRepository.deleteAlbum(albumId);
+    public void deleteAlbum(String albumId) {
+        albumRepository.deleteById(albumId);
     }
 }
