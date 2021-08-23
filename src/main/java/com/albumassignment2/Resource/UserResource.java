@@ -15,27 +15,27 @@ public class UserResource {
     private UserService userService;
 
     @PostMapping
-    public User saveuser(@RequestBody User user){
-        return userService.saveuser(user);
+    public User saveUser(@RequestBody User user){
+        return userService.saveUser(user);
     }
 
     @GetMapping
-    public List<User> getAlluser(){
-        return userService.getAlluser();
+    public List<User> getAllUser(){
+        return userService.getAllUser();
     }
 
     @GetMapping("userId")
-    public void getuserById(@RequestParam("userId") String userId){
-        userService.getuserbyId(userId);
+    public void getUserById(@RequestParam("userId") String userId){
+        userService.getUserById(userId);
     }
 
     @PutMapping
-    public User updateuser(@RequestBody User user){
-        return userService.updateuser(user);
+    public User updateUser(@RequestBody User user){
+        return userService.updateUser(user);
     }
 
     @DeleteMapping
-    public void deleteuser(@RequestParam(name ="userId") String userId ){
-        userService.deleteuser(userId);
+    public void deleteUser(@RequestParam(name ="userId") String userId ){
+        userService.deleteUser(userId);
     }
 }
