@@ -16,8 +16,8 @@ public class CommentService {
 
 
     public Comment saveComment(Comment comment){
-        return (Comment) commentRepository.save(comment);
-    };
+        return commentRepository.save(comment);
+    }
 
     public void getCommentbyId(String commentId) {
         commentRepository.findById(commentId);
