@@ -1,10 +1,17 @@
 package com.albumassignment2.Model;
 
+import com.albumassignment2.validName.ValidName;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Size;
+
 public class Comment {
 
     private String id;
     private String photoId;
+    @Size(min = 5)
     private String message;
+    @ValidName
     private String createdBy;
     private String dateCreated;
 

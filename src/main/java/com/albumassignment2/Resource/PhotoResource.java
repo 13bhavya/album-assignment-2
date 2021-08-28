@@ -2,9 +2,11 @@ package com.albumassignment2.Resource;
 
 import com.albumassignment2.Model.Photo;
 import com.albumassignment2.service.PhotoService;
+import com.albumassignment2.validName.ValidName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -15,7 +17,7 @@ public class PhotoResource {
     private PhotoService photoService;
 
     @PostMapping
-    public Photo savePhoto(@RequestBody Photo photo){
+    public Photo savePhoto(@RequestBody @Valid Photo photo){
         return photoService.savePhoto(photo);
     }
 

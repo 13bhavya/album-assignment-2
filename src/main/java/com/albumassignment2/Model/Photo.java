@@ -1,10 +1,13 @@
 package com.albumassignment2.Model;
 
+import com.albumassignment2.validName.ValidName;
+
 public class Photo {
 
     private String id;
     private String name;
     private String coverPhotoUrl;
+    @ValidName
     private String createdBy;
     private String dateCreated;
 

@@ -1,10 +1,15 @@
 package com.albumassignment2.Model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 public class User {
 
     private String id;
     private String name;
+    @Email
     private String email;
+    @NotEmpty
     private String photoPhotoUrl;
 
     public User(String name, String email, String photoPhotoUrl) {

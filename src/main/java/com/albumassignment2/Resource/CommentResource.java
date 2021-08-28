@@ -3,9 +3,12 @@ package com.albumassignment2.Resource;
 import com.albumassignment2.Model.Album;
 import com.albumassignment2.Model.Comment;
 import com.albumassignment2.service.CommentService;
+import com.albumassignment2.validName.ValidName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.ValidationException;
 import java.util.List;
 
 @RestController
@@ -16,7 +19,7 @@ public class CommentResource {
     private CommentService commentService;
 
     @PostMapping
-    public Comment saveComment(@RequestBody Comment comment){
+    public Comment saveComment(@RequestBody @Valid Comment comment) throws ValidationException {
         return commentService.saveComment(comment);
     }
 
